@@ -5,19 +5,20 @@ export const load = {
     k.loadFont("Round", "./assets/Round9x13.ttf");
   },
   assets: () => {
-    k.loadSprite("up", "./assets/Arrow_Up_Key_Dark.png");
-    k.loadSprite("down", "./assets/Arrow_Down_Key_Dark.png");
-    k.loadSprite("left", "./assets/Arrow_Left_Key_Dark.png");
-    k.loadSprite("right", "./assets/Arrow_Right_Key_Dark.png");
-    k.loadSprite("space", "./assets/Space_Key_Dark.png");
+    k.loadSprite("up", "./assets/up-arrow.png"); // Done
+    k.loadSprite("down", "./assets/down-arrow.png"); // Done
+    k.loadSprite("left", "./assets/left-arrow.png"); // Done
+    k.loadSprite("right", "./assets/right-arrow.png"); // Done
+    k.loadSprite("space", "./assets/space.png"); // Done
 
+    k.loadSprite("menu-background", "./assets/menu_background.png"); // Done
     k.loadSprite("forest-background", "./assets/Forest_Background_0.png");
     k.loadSprite("castle-background", "./assets/Castle_Background_0.png");
     k.loadSprite("sky-background-0", "./assets/Sky_Background_0.png");
     k.loadSprite("sky-background-1", "./assets/Sky_Background_1.png");
     k.loadSprite("sky-background-2", "./assets/Sky_Background_2.png");
 
-    k.loadSprite("logo", "./assets/Logo.png");
+    k.loadSprite("logo", "./assets/logo.png"); // Done
 
     k.loadSprite("bridge", "./assets/Bridge.png");
     k.loadSprite("coin", "./assets/Coin.png");
@@ -151,22 +152,30 @@ export const load = {
       },
     });
 
-    k.loadSprite("player", "./assets/Player.png", {
-      sliceX: 4,
-      sliceY: 6,
+    k.loadSprite("player", "./assets/player.png", {
+      sliceX: 10,
+      sliceY: 4,
       anims: {
         idle: {
           from: 0,
-          to: 3,
+          to: 6,
           loop: true,
         },
         run: {
-          from: 4,
-          to: 7,
+          from: 10,
+          to: 19,
           loop: true,
         },
-        "jump-up": 8,
-        "jump-down": 9,
+        "jump-up": {
+          from: 20,
+          to: 23,
+          loop: true,
+        },
+        "jump-down": {
+          from: 30,
+          to: 33,
+          loop: true,
+        },
       },
     });
   },

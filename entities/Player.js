@@ -31,7 +31,7 @@ export class Player {
   makePlayer() {
     this.gameObj = k.add([
       k.sprite("player", { anim: "idle" }),
-      k.area({ shape: new Rect(vec2(0, 3), 8, 8) }),
+      k.area({ shape: new Rect(vec2(0, 8), 8, 8) }),
       k.anchor("center"),
       k.pos(this.initialX, this.initialY),
       k.scale(4),

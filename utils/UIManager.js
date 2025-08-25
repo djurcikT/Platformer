@@ -55,7 +55,7 @@ class UIManager {
       await k.tween(
         message.opacity,
         0,
-        0.5,
+        1,
         (nextOpacityValue) => {
           message.opacity = nextOpacityValue;
         },
@@ -67,7 +67,7 @@ class UIManager {
       await k.tween(
         message.opacity,
         1,
-        0.5,
+        1,
         (nextOpacityValue) => {
           message.opacity = nextOpacityValue;
         },
@@ -78,13 +78,12 @@ class UIManager {
   }
 
   displayMainMenu() {
-    k.add([k.sprite("forest-background"), k.scale(4)]);
+    k.add([k.sprite("menu-background"), k.scale(2)]);
     k.add([
       k.sprite("logo"),
       k.area(),
       k.anchor("center"),
-      k.pos(k.center().x, k.center().y - 200),
-      k.scale(8),
+      k.pos(k.center().x, k.center().y - 170),
     ]);
 
     this.displayBlinkingUIMessage(
@@ -99,7 +98,7 @@ class UIManager {
   }
 
   displayControlsMenu() {
-    k.add([k.sprite("forest-background"), k.scale(4)]);
+    k.add([k.sprite("menu-background"), k.scale(2)]);
     k.add([
       k.text("Controls", { font: "Round", size: 50 }),
       k.area(),
@@ -108,11 +107,11 @@ class UIManager {
     ]);
     const controlPrompts = k.add([k.pos(center().x + 30, center().y)]);
 
-    controlPrompts.add([k.sprite("up"), k.pos(0, -80)]);
-    controlPrompts.add([k.sprite("down")]);
-    controlPrompts.add([k.sprite("left"), k.pos(-80, 0)]);
-    controlPrompts.add([k.sprite("right"), k.pos(80, 0)]);
-    controlPrompts.add([k.sprite("space"), k.pos(-200, 0)]);
+    controlPrompts.add([k.sprite("up"), k.pos(15, -60)]);
+    controlPrompts.add([k.sprite("down"), k.pos(15, 0)]);
+    controlPrompts.add([k.sprite("left"), k.pos(-45, 0)]);
+    controlPrompts.add([k.sprite("right"), k.pos(75, 0)]);
+    controlPrompts.add([k.sprite("space"), k.pos(-200, -35), k.scale(1.6)]);
 
     controlPrompts.add([
       k.text("Jump", { font: "Round", size: 32 }),
