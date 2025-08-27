@@ -1,4 +1,4 @@
-// https://www.youtube.com/watch?v=wZpbTR7pYR0&t=12238s 4.33.17
+// https://www.youtube.com/watch?v=wZpbTR7pYR0&t=12238s 4.52.40
 
 import kaplay from "https://unpkg.com/kaplay@3001.0.19/dist/kaplay.mjs";
 import { uiManager } from "./utils/UIManager.js";
@@ -49,7 +49,7 @@ const scenes = {
       false
     );
     player.enablePassthrough();
-    player.enableCoinPickup();
+    player.enableFoodPickup();
     player.update();
 
     attachCamera(player.gameObj, 0, 200);
@@ -58,8 +58,8 @@ const scenes = {
 
     uiManager.addDarkBg();
 
-    uiManager.displayCoinCount();
-    player.updateCoinCount(uiManager.coinCountUI);
+    uiManager.displayFoodCount();
+    player.updateFoodCount(uiManager.foodCountUI);
 
     uiManager.displayLivesCount();
     player.updateLives(uiManager.livesCountUI);
@@ -68,7 +68,7 @@ const scenes = {
     k.setGravity(1400);
 
     const level2 = new Level();
-    level2.drawBackground("castle-background");
+    level2.drawBackground("cave-background");
     level2.drawMapLayout(level2Layout, level2Mappings);
 
     const player = new Player(
@@ -81,7 +81,7 @@ const scenes = {
       false
     );
     player.enablePassthrough();
-    player.enableCoinPickup();
+    player.enableFoodPickup();
     player.update();
 
     attachCamera(player.gameObj, 0, 200);
@@ -90,8 +90,8 @@ const scenes = {
 
     uiManager.addDarkBg();
 
-    uiManager.displayCoinCount();
-    player.updateCoinCount(uiManager.coinCountUI);
+    uiManager.displayFoodCount();
+    player.updateFoodCount(uiManager.foodCountUI);
 
     uiManager.displayLivesCount();
     player.updateLives(uiManager.livesCountUI);
@@ -100,9 +100,7 @@ const scenes = {
     k.setGravity(1400);
 
     const level3 = new Level();
-    level3.drawBackground("sky-background-0");
-    level3.drawBackground("sky-background-1");
-    level3.drawBackground("sky-background-2");
+    level3.drawBackground("sky-background");
     level3.drawMapLayout(level3Layout, level3Mappings);
 
     const player = new Player(
@@ -115,7 +113,7 @@ const scenes = {
       true
     );
     player.enablePassthrough();
-    player.enableCoinPickup();
+    player.enableFoodPickup();
     player.update();
 
     attachCamera(player.gameObj, 0, 200);
@@ -124,8 +122,8 @@ const scenes = {
 
     uiManager.addDarkBg();
 
-    uiManager.displayCoinCount();
-    player.updateCoinCount(uiManager.coinCountUI);
+    uiManager.displayFoodCount();
+    player.updateFoodCount(uiManager.foodCountUI);
 
     uiManager.displayLivesCount();
     player.updateLives(uiManager.livesCountUI);

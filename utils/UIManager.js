@@ -12,28 +12,28 @@ class UIManager {
     ]);
 
     this.livesCountUI.add([
-      k.sprite("star-icon"),
-      k.pos(-60, -5),
-      k.scale(3),
+      k.sprite("life-icon"),
+      k.pos(-70, -10),
+      k.scale(2),
       k.fixed(),
     ]);
   }
-  displayCoinCount(player) {
-    this.coinCountUI = k.add([
+  displayFoodCount(player) {
+    this.foodCountUI = k.add([
       k.text("", {
         font: "Round",
         size: 50,
       }),
       {
-        fullCoinCount: k.get("coin", { recursive: true }).length,
+        fullFoodCount: k.get("strawberry", { recursive: true }).length,
       },
       k.fixed(),
       k.pos(70, 70),
     ]);
 
-    this.coinCountUI.add([
-      k.sprite("coin-icon"),
-      k.pos(-60, 0),
+    this.foodCountUI.add([
+      k.sprite("strawberry"),
+      k.pos(-70, -15),
       k.scale(3),
       k.fixed(),
     ]);
@@ -120,6 +120,15 @@ class UIManager {
     controlPrompts.add([
       k.text("Move", { font: "Round", size: 32 }),
       k.pos(10, 100),
+    ]);
+
+    k.add([
+      k.text("Collect all strawberries to win!", {
+        font: "Round",
+        size: 32,
+      }),
+      k.anchor("center"),
+      k.pos(k.center().x, k.center().y + 200),
     ]);
 
     this.displayBlinkingUIMessage(

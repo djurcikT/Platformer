@@ -12,18 +12,15 @@ export const load = {
     k.loadSprite("space", "./assets/space.png"); // Done
 
     k.loadSprite("menu-background", "./assets/menu_background.png"); // Done
-    k.loadSprite("forest-background", "./assets/Forest_Background_0.png");
-    k.loadSprite("castle-background", "./assets/Castle_Background_0.png");
-    k.loadSprite("sky-background-0", "./assets/Sky_Background_0.png");
-    k.loadSprite("sky-background-1", "./assets/Sky_Background_1.png");
-    k.loadSprite("sky-background-2", "./assets/Sky_Background_2.png");
+    k.loadSprite("forest-background", "./assets/forest_background.png"); // Done? mutno
+    k.loadSprite("cave-background", "./assets/cave_background.png"); // Done
+    k.loadSprite("sky-background", "./assets/sky_background.png"); // Done? mutno
 
     k.loadSprite("logo", "./assets/logo.png"); // Done
 
     k.loadSprite("bridge", "./assets/Bridge.png");
-    k.loadSprite("coin", "./assets/Coin.png");
-    k.loadSprite("coin-icon", "./assets/Coins_UI.png");
-    k.loadSprite("star-icon", "./assets/Stars_UI.png");
+    k.loadSprite("strawberry", "./assets/strawberry.png"); //Done
+    k.loadSprite("life-icon", "./assets/heart.png");
 
     k.loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
       sliceX: 3,
@@ -126,7 +123,7 @@ export const load = {
           loop: true,
         },
       },
-    });
+    }); // Done
     k.loadSprite("lava", "./assets/Lava.png", {
       sliceX: 8,
       sliceY: 1,
@@ -138,7 +135,7 @@ export const load = {
           loop: true,
         },
       },
-    });
+    }); // Done
     k.loadSprite("clouds", "./assets/Clouds.png", {
       sliceX: 8,
       sliceY: 1,
@@ -150,7 +147,7 @@ export const load = {
           loop: true,
         },
       },
-    });
+    }); // Done
 
     k.loadSprite("player", "./assets/player.png", {
       sliceX: 10,
@@ -177,6 +174,23 @@ export const load = {
           loop: true,
         },
       },
+    }); // Done
+
+    loadSprite("spider-1", "./assets/Spider_1.png", {
+      sliceX: 3,
+      sliceY: 1,
+      anims: {
+        crawl: { from: 0, to: 2, loop: true },
+        idle: 0,
+      },
+    });
+    loadSprite("spider-2", "./assets/Spider_2.png", {
+      sliceX: 3,
+      sliceY: 1,
+      anims: {
+        crawl: { from: 0, to: 2, loop: true },
+        idle: 0,
+      },
     });
   },
   sounds: () => {
@@ -184,5 +198,6 @@ export const load = {
     k.loadSound("jump", "./sounds/jump.wav");
     k.loadSound("hit", "./sounds/hit.wav");
     k.loadSound("coin", "./sounds/coin.wav");
+    k.loadSound("spider-attack", "./sounds/spider-attack.mp3");
   },
 };

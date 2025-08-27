@@ -5,7 +5,7 @@ export class Player {
   isRespawning = false;
   isMoving = false;
   coyoteLapse = 0.1;
-  coins = 0;
+  food = 0;
 
   constructor(
     posX,
@@ -52,10 +52,10 @@ export class Player {
     });
   }
 
-  enableCoinPickup() {
-    this.gameObj.onCollide("coin", (coin) => {
-      this.coins++;
-      k.destroy(coin);
+  enableFoodPickup() {
+    this.gameObj.onCollide("strawberry", (strawberry) => {
+      this.food++;
+      k.destroy(strawberry);
       k.play("coin");
     });
   }
@@ -145,10 +145,10 @@ export class Player {
     });
   }
 
-  updateCoinCount(coinCountUI) {
+  updateFoodCount(foodCountUI) {
     k.onUpdate(() => {
-      coinCountUI.text = `${this.coins} / ${coinCountUI.fullCoinCount}`;
-      if (this.coins === coinCountUI.fullCoinCount) {
+      foodCountUI.text = `${this.food} / ${foodCountUI.fullFoodCount}`;
+      if (this.food === foodCountUI.fullFoodCount) {
         k.go(this.isInFinalLevel ? "end" : this.currentLevelScene + 1);
       }
     });

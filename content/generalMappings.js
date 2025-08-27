@@ -81,6 +81,13 @@ export function generateMappings(tileType) {
       k.body({ isStatic: true }),
       k.offscreen(),
     ],
-    "@": () => [k.sprite("coin"), k.area(), "coin", k.offscreen()],
+    "@": () => [
+      k.sprite("strawberry"),
+      k.area(),
+      "strawberry",
+      k.offscreen(),
+      k.scale(0.75),
+      k.pos(0, 5),
+    ],
   };
 }
