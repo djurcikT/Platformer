@@ -1,15 +1,15 @@
 import { k } from "../main.js";
 
 export class Spiders {
-  constructor(positions, ranges, speeds, type) {
+  constructor(positions, ranges, durations, type) {
     this.ranges = ranges;
-    this.speeds = speeds;
+    this.durations = durations;
 
     this.spiders = [];
     for (const position of positions) {
       this.spiders.push(
         k.add([
-          k.sprite("spider-${type}", { anim: "crawl" }),
+          k.sprite(`spider-${type}`, { anim: "crawl" }),
           k.pos(position),
           k.area({
             shape: new Rect(vec2(0, 4.5), 20, 6),
@@ -50,18 +50,42 @@ export class Spiders {
         if (previousState === "crawl-left") {
           spider.enterState("crawl-right");
           return;
+        } else {
+          spider.jump();
+          if (!spider.isOffScreen()) {
+            k.play("spider-attack", { volume: 0.6 });
+          }
+          spider.enterState("crawl-left");
         }
-        spider.jump();
-        if (!spider.isOffScreen()) {
-          k.play("spider-attack", { volume: 0.6 });
-        }
-        spider.enterState("crawl-left");
       });
-      const crawlLeft = spider.onStateEnter("crawl-left", async () => {
-        spider.flipX(false);
 
-        await this.crawl(spider, -this.ranges[index], this.speeds[index]);
+      const crawlLeft = spider.onStateEnter("crawl-left", async () => {
+        spider.flipX = false;
+
+        await this.crawl(spider, -this.ranges[index], this.durations[index]);
         spider.enterState("idle", "crawl-left");
+      });
+
+      const crawlRight = spider.onStateEnter("crawl-right", async () => {
+        spider.flipX = true;
+        await this.crawl(spider, this.ranges[index], this.durations[index]);
+        spider.enterState("idle", "crawl-right");
+      });
+
+      k.onSceneLeave(() => {
+        idle.cancel();
+        crawlLeft.cancel();
+        crawlRight.cancel();
+      });
+    }
+  }
+
+  enablePassthrough() {
+    for (const spider of this.spiders) {
+      spider.onBeforePhysicsResolve((collision) => {
+        if (collision.target.is("passthrough") && spider.isJumping()) {
+          collision.preventResolution();
+        }
       });
     }
   }

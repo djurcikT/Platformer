@@ -5,21 +5,21 @@ export const load = {
     k.loadFont("Round", "./assets/Round9x13.ttf");
   },
   assets: () => {
-    k.loadSprite("up", "./assets/up-arrow.png"); // Done
-    k.loadSprite("down", "./assets/down-arrow.png"); // Done
-    k.loadSprite("left", "./assets/left-arrow.png"); // Done
-    k.loadSprite("right", "./assets/right-arrow.png"); // Done
-    k.loadSprite("space", "./assets/space.png"); // Done
+    k.loadSprite("up", "./assets/up-arrow.png");
+    k.loadSprite("down", "./assets/down-arrow.png");
+    k.loadSprite("left", "./assets/left-arrow.png");
+    k.loadSprite("right", "./assets/right-arrow.png");
+    k.loadSprite("space", "./assets/space.png");
 
-    k.loadSprite("menu-background", "./assets/menu_background.png"); // Done
-    k.loadSprite("forest-background", "./assets/forest_background.png"); // Done? mutno
-    k.loadSprite("cave-background", "./assets/cave_background.png"); // Done
-    k.loadSprite("sky-background", "./assets/sky_background.png"); // Done? mutno
+    k.loadSprite("menu-background", "./assets/menu_background.png");
+    k.loadSprite("forest-background", "./assets/forest_background.png");
+    k.loadSprite("castle-background", "./assets/castle_background.png");
+    k.loadSprite("sky-background", "./assets/sky_background.png");
 
-    k.loadSprite("logo", "./assets/logo.png"); // Done
+    k.loadSprite("logo", "./assets/logo.png");
 
     k.loadSprite("bridge", "./assets/Bridge.png");
-    k.loadSprite("strawberry", "./assets/strawberry.png"); //Done
+    k.loadSprite("strawberry", "./assets/strawberry.png");
     k.loadSprite("life-icon", "./assets/heart.png");
 
     k.loadSprite("grass-tileset", "./assets/Grass_Tileset.png", {
@@ -123,7 +123,7 @@ export const load = {
           loop: true,
         },
       },
-    }); // Done
+    });
     k.loadSprite("lava", "./assets/Lava.png", {
       sliceX: 8,
       sliceY: 1,
@@ -135,7 +135,7 @@ export const load = {
           loop: true,
         },
       },
-    }); // Done
+    });
     k.loadSprite("clouds", "./assets/Clouds.png", {
       sliceX: 8,
       sliceY: 1,
@@ -147,7 +147,7 @@ export const load = {
           loop: true,
         },
       },
-    }); // Done
+    });
 
     k.loadSprite("player", "./assets/player.png", {
       sliceX: 10,
@@ -174,7 +174,7 @@ export const load = {
           loop: true,
         },
       },
-    }); // Done
+    });
 
     loadSprite("spider-1", "./assets/Spider_1.png", {
       sliceX: 3,
@@ -192,6 +192,41 @@ export const load = {
         idle: 0,
       },
     });
+    loadSprite("fish", "./assets/Fish_1.png", {
+      sliceX: 2,
+      sliceY: 1,
+      anims: {
+        swim: {
+          from: 0,
+          to: 1,
+          loop: true,
+        },
+      },
+    });
+    loadSprite("flames", "./assets/Flame_1.png", {
+      sliceX: 2,
+      sliceY: 1,
+      anims: {
+        burn: {
+          from: 0,
+          to: 1,
+          loop: true,
+        },
+      },
+    });
+    loadSprite("axe", "./assets/Axe_Trap.png");
+    loadSprite("saw", "./assets/Circular_Saw.png");
+    loadSprite("birds", "./assets/Bird_2.png", {
+      sliceX: 3,
+      sliceY: 1,
+      anims: {
+        fly: {
+          from: 0,
+          to: 2,
+          loop: true,
+        },
+      },
+    });
   },
   sounds: () => {
     k.loadSound("confirm-ui", "./sounds/confirm-ui.wav");
@@ -199,5 +234,8 @@ export const load = {
     k.loadSound("hit", "./sounds/hit.wav");
     k.loadSound("coin", "./sounds/coin.wav");
     k.loadSound("spider-attack", "./sounds/spider-attack.mp3");
+    k.loadSound("swinging-axe", "./sounds/swinging-axe.mp3");
+    k.loadSound("saw", "./sounds/saw.wav");
+    k.loadSound("dive", "./sounds/dive.wav");
   },
 };

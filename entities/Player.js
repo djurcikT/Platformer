@@ -103,6 +103,20 @@ export class Player {
 
     k.go("gameover");
   }
+
+  enableMobVulnerability() {
+    function hitAndRespawn(context) {
+      k.play("hit", { speed: 1.5 });
+      context.respawnPlayer();
+    }
+    this.gameObj.onCollide("spiders", () => hitAndRespawn(this));
+    this.gameObj.onCollide("fish", () => hitAndRespawn(this));
+    this.gameObj.onCollide("flames", () => hitAndRespawn(this));
+    this.gameObj.onCollide("axes", () => hitAndRespawn(this));
+    this.gameObj.onCollide("saws", () => hitAndRespawn(this));
+    this.gameObj.onCollide("birds", () => hitAndRespawn(this));
+  }
+
   update() {
     k.onUpdate(() => {
       if (this.gameObj.isGrounded()) {
