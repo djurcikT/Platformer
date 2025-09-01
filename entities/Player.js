@@ -56,7 +56,7 @@ export class Player {
     this.gameObj.onCollide("strawberry", (strawberry) => {
       this.food++;
       k.destroy(strawberry);
-      k.play("coin");
+      k.play("coin", { volume: 0.2 });
     });
   }
 
@@ -80,7 +80,7 @@ export class Player {
       if (k.time() - this.timeSinceLastGrounded > this.coyoteLapse) return;
 
       this.gameObj.jump(this.jumpForce);
-      if (this.gameObj.curAnim() !== "jump") k.play("jump");
+      if (this.gameObj.curAnim() !== "jump") k.play("jump", { volume: 0.4 });
       this.hasJumpedOnce = true;
     });
 
@@ -109,9 +109,9 @@ export class Player {
       k.play("hit", { speed: 1.5 });
       context.respawnPlayer();
     }
-    this.gameObj.onCollide("spiders", () => hitAndRespawn(this));
+    this.gameObj.onCollide("frogs", () => hitAndRespawn(this));
     this.gameObj.onCollide("fish", () => hitAndRespawn(this));
-    this.gameObj.onCollide("flames", () => hitAndRespawn(this));
+    this.gameObj.onCollide("flame", () => hitAndRespawn(this));
     this.gameObj.onCollide("axes", () => hitAndRespawn(this));
     this.gameObj.onCollide("saws", () => hitAndRespawn(this));
     this.gameObj.onCollide("birds", () => hitAndRespawn(this));

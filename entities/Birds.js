@@ -8,7 +8,7 @@ export class Birds {
     for (const position of positions) {
       this.birds.push(
         k.add([
-          k.sprite("birds", { anim: "fly" }),
+          k.sprite("bird", { anim: "fly" }),
           k.pos(position),
           k.area({ shape: new Rect(vec2(0), 10, 10) }),
           k.anchor("center"),
@@ -51,12 +51,12 @@ export class Birds {
     for (const [index, bird] of this.birds.entries()) {
       const flyLeft = bird.onStateEnter("fly-left", async () => {
         bird.flipX = false;
-        await this.fly(bird, -this.ranges[index], 0.5);
+        await this.fly(bird, -this.ranges[index], 0.6);
         bird.enterState("dive-attack-left");
       });
       const flyRight = bird.onStateEnter("fly-right", async () => {
         bird.flipX = true;
-        await this.fly(bird, this.ranges[index], 0.5);
+        await this.fly(bird, this.ranges[index], 0.6);
         bird.enterState("dive-attack-right");
       });
 
@@ -67,7 +67,7 @@ export class Birds {
             bird.pos.x - this.ranges[index],
             bird.pos.y + this.ranges[index]
           ),
-          0.5
+          0.6
         );
         await this.dive(
           bird,
@@ -75,7 +75,7 @@ export class Birds {
             bird.pos.x - this.ranges[index],
             bird.pos.y - this.ranges[index]
           ),
-          0.5
+          0.6
         );
         bird.enterState("fly-right");
       });
@@ -88,7 +88,7 @@ export class Birds {
               bird.pos.x + this.ranges[index],
               bird.pos.y + this.ranges[index]
             ),
-            0.5
+            0.6
           );
           await this.dive(
             bird,
@@ -96,7 +96,7 @@ export class Birds {
               bird.pos.x + this.ranges[index],
               bird.pos.y - this.ranges[index]
             ),
-            0.5
+            0.6
           );
           bird.enterState("fly-left");
         }

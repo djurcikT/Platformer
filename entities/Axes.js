@@ -27,7 +27,7 @@ export class Axes {
   }
 
   async swing(axe, targetAngle, swingDuration) {
-    if (!axe.isOffScreen()) k.play("swinging-axe");
+    if (!axe.isOffScreen()) k.play("swinging-axe", { volume: 0.1 });
 
     await k.tween(
       axe.angle,

@@ -6,15 +6,15 @@ export const level1Config = {
   playerStartPosX: 1500,
   playerStartPosY: 100,
 
-  spiderPositions: [
+  frogPositions: [
     () => vec2(2000, 300),
     () => vec2(2020, 0),
     () => vec2(3200, 200),
     () => vec2(3500, 300),
   ],
-  spiderRanges: [300, 150, 150, 300],
-  spiderDurations: [2, 1, 1, 2],
-  spiderType: 1,
+  frogRanges: [300, 150, 150, 300],
+  frogDurations: [2, 1, 1, 2],
+  frogType: 1,
 
   fishPositions: [
     () => vec2(2595, 600),

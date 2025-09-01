@@ -1,7 +1,7 @@
 import { k } from "../main.js";
 
 class UIManager {
-  displayLivesCount(player) {
+  displayLivesCount() {
     this.livesCountUI = k.add([
       k.text("", {
         font: "Round",
@@ -18,7 +18,7 @@ class UIManager {
       k.fixed(),
     ]);
   }
-  displayFoodCount(player) {
+  displayFoodCount() {
     this.foodCountUI = k.add([
       k.text("", {
         font: "Round",
@@ -92,7 +92,7 @@ class UIManager {
     );
 
     k.onKeyPress("enter", () => {
-      k.play("confirm-ui", { speed: 1.5 });
+      k.play("confirm-ui");
       k.go("controls");
     });
   }
@@ -137,7 +137,47 @@ class UIManager {
     );
 
     k.onKeyPress("enter", () => {
-      k.play("confirm-ui", { speed: 1.5 });
+      k.play("confirm-ui");
+      k.go("1");
+    });
+  }
+
+  displayGameOverScreen() {
+    k.add([rect(1280, 720), color(0, 0, 0)]);
+    k.add([
+      k.text("Game Over!", { font: "Round", size: 50 }),
+      k.area(),
+      k.anchor("center"),
+      k.pos(k.center()),
+    ]);
+
+    this.displayBlinkingUIMessage(
+      "Press [ Enter ] to Play Again",
+      k.vec2(k.center().x, k.center().y + 100)
+    );
+
+    k.onKeyPress("enter", () => {
+      k.play("confirm-ui");
+      k.go("1");
+    });
+  }
+
+  displayEndGameScreen() {
+    k.add([rect(1280, 720), color(0, 0, 0)]);
+    k.add([
+      k.text("You Won! Thanks for Playing", { font: "Round", size: 50 }),
+      k.area(),
+      k.anchor("center"),
+      k.pos(k.center()),
+    ]);
+
+    this.displayBlinkingUIMessage(
+      "Press [ Enter ] to Play Again",
+      k.vec2(k.center().x, k.center().y + 100)
+    );
+
+    k.onKeyPress("enter", () => {
+      k.play("confirm-ui");
       k.go("1");
     });
   }

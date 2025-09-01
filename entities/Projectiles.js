@@ -7,7 +7,7 @@ export class Projectiles {
     this.projectiles = [];
     const animMap = {
       fish: "swim",
-      flames: "burn",
+      flame: "burn",
     };
 
     for (const position of positions) {
@@ -32,7 +32,7 @@ export class Projectiles {
   setMovementPattern() {
     for (const [index, projectile] of this.projectiles.entries()) {
       const launch = projectile.onStateEnter("launch", async () => {
-        if (this.type === "fish") projectile.flipX = false;
+        if (this.type === "fish") projectile.flipX = true;
         if (this.type === "flames") projectile.flipY = false;
         await k.tween(
           projectile.pos.y,
@@ -45,7 +45,7 @@ export class Projectiles {
       });
 
       const fall = projectile.onStateEnter("fall", async () => {
-        if (this.type === "fish") projectile.flipX = true;
+        if (this.type === "fish") projectile.flipX = false;
         if (this.type === "flames") projectile.flipY = true;
         await k.tween(
           projectile.pos.y,

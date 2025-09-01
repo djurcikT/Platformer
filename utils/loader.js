@@ -176,34 +176,34 @@ export const load = {
       },
     });
 
-    loadSprite("spider-1", "./assets/Spider_1.png", {
-      sliceX: 3,
+    k.loadSprite("frog-1", "./assets/frog_1.png", {
+      sliceX: 8,
       sliceY: 1,
       anims: {
-        crawl: { from: 0, to: 2, loop: true },
-        idle: 0,
+        walk: { from: 0, to: 3, loop: true },
+        idle: 3,
       },
     });
-    loadSprite("spider-2", "./assets/Spider_2.png", {
-      sliceX: 3,
+    k.loadSprite("frog-2", "./assets/frog_2.png", {
+      sliceX: 8,
       sliceY: 1,
       anims: {
-        crawl: { from: 0, to: 2, loop: true },
-        idle: 0,
+        walk: { from: 0, to: 3, loop: true },
+        idle: 3,
       },
     });
-    loadSprite("fish", "./assets/Fish_1.png", {
-      sliceX: 2,
-      sliceY: 1,
+    k.loadSprite("fish", "./assets/Fish.png", {
+      sliceX: 4,
+      sliceY: 2,
       anims: {
         swim: {
-          from: 0,
-          to: 1,
+          from: 3,
+          to: 5,
           loop: true,
         },
       },
     });
-    loadSprite("flames", "./assets/Flame_1.png", {
+    k.loadSprite("flame", "./assets/Flame.png", {
       sliceX: 2,
       sliceY: 1,
       anims: {
@@ -214,9 +214,9 @@ export const load = {
         },
       },
     });
-    loadSprite("axe", "./assets/Axe_Trap.png");
-    loadSprite("saw", "./assets/Circular_Saw.png");
-    loadSprite("birds", "./assets/Bird_2.png", {
+    k.loadSprite("axe", "./assets/Axe_Trap.png");
+    k.loadSprite("saw", "./assets/Circular_Saw.png");
+    k.loadSprite("bird", "./assets/Bird.png", {
       sliceX: 3,
       sliceY: 1,
       anims: {
@@ -229,13 +229,16 @@ export const load = {
     });
   },
   sounds: () => {
-    k.loadSound("confirm-ui", "./sounds/confirm-ui.wav");
-    k.loadSound("jump", "./sounds/jump.wav");
-    k.loadSound("hit", "./sounds/hit.wav");
-    k.loadSound("coin", "./sounds/coin.wav");
-    k.loadSound("spider-attack", "./sounds/spider-attack.mp3");
-    k.loadSound("swinging-axe", "./sounds/swinging-axe.mp3");
-    k.loadSound("saw", "./sounds/saw.wav");
-    k.loadSound("dive", "./sounds/dive.wav");
+    k.loadSound("confirm-ui", "./sounds/confirm.mp3");
+    k.loadSound("jump", "./sounds/jump.mp3");
+    k.loadSound("hit", "./sounds/hurt.mp3");
+    k.loadSound("coin", "./sounds/collect.mp3");
+    k.loadSound("spider-attack", "./sounds/frog_jump.mp3");
+    k.loadSound("swinging-axe", "./sounds/axe_swing.mp3");
+    k.loadSound("saw", "./sounds/saw_running.mp3");
+    k.loadSound("dive", "./sounds/bird_dive.mp3");
+    k.loadSound("water-ambience", "./sounds/water_ambience.mp3");
+    k.loadSound("lava-ambience", "./sounds/lava_ambience.mp3");
+    k.loadSound("wind-ambience", "./sounds/wind_ambience.mp3");
   },
 };

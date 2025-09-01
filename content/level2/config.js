@@ -6,18 +6,18 @@ export const level2Config = {
   playerStartPosX: 1500,
   playerStartPosY: 100,
 
-  spiderPositions: [
+  frogPositions: [
     () => vec2(2200, 100),
     () => vec2(1900, 0),
     () => vec2(3200, 200),
     () => vec2(3500, 300),
     () => vec2(4500, 300),
   ],
-  spiderRanges: [300, 150, 150, 300, 300],
-  spiderDurations: [2, 1, 1, 2, 2],
-  spiderType: 2,
+  frogRanges: [300, 150, 150, 300, 300],
+  frogDurations: [2, 1, 1, 2, 2],
+  frogType: 2,
 
-  flamesPositions: [
+  flamePositions: [
     () => vec2(2595, 600),
     () => vec2(2655, 600),
     () => vec2(2775, 600),
@@ -31,7 +31,7 @@ export const level2Config = {
     () => vec2(5800, 550),
     () => vec2(5900, 550),
   ],
-  flamesRanges: [300, 500, 400, 300, 500, 900, 800, 500, 500, 900, 800, 500],
+  flameRanges: [300, 500, 400, 300, 500, 900, 800, 500, 500, 900, 800, 500],
 
   axesPositions: [
     () => vec2(2100, -50),
