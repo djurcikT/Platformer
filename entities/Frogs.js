@@ -12,7 +12,7 @@ export class Frogs {
           k.sprite(`frog-${type}`, { anim: "walk" }),
           k.pos(position),
           k.area({
-            shape: new Rect(vec2(0, 4.5), 20, 6),
+            shape: new Rect(vec2(0, 4.5), 15, 6),
             collisionIgnore: ["frogs"],
           }),
           k.anchor("center"),
