@@ -1,6 +1,6 @@
 # 🎮 Platformer Game (Kaplay Edition)
 ## 🌐 Live Demo
-🔗 [link](link)
+🔗 [https://kaplayplatformergame.netlify.app/](https://kaplayplatformergame.netlify.app/)
 
 ---
 
